@@ -1,0 +1,58 @@
+{
+	"name": "@liquicode/jsonstor-elasticsearch",
+	"version": "0.1.0",
+	"description": "A jsonstor adapter which stores documents on an Elasticsearch or OpenSearch server.",
+	"license": "MIT",
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"homepage": "http://jsonstor.liquicode.com",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/liquicode/jsonstor-elasticsearch"
+	},
+	"authors": [
+		{
+			"name": "Andre' G. Bowlin",
+			"email": "agbowlin@gmail.com",
+			"homepage": "http://liquicode.com"
+		}
+	],
+	"type": "commonjs",
+	"main": "src/jsonstor-elasticsearch.js",
+	"types": "./types/jsonstor-elasticsearch.d.ts",
+	"exports": {
+		".": {
+			"types": "./types/jsonstor-elasticsearch.d.ts",
+			"import": "./src/jsonstor-elasticsearch.mjs",
+			"require": "./src/jsonstor-elasticsearch.js",
+			"default": "./src/jsonstor-elasticsearch.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"src",
+		"types",
+		"license.md",
+		"readme.md",
+		"history.md"
+	],
+	"scripts": {
+		"publish version": "npx @liquicode/devops --tasks .\\build\\devops.tasks.js publish_version",
+		"start new version": "npx @liquicode/devops --tasks .\\build\\devops.tasks.js start_new_version"
+	},
+	"keywords": [
+		"jsonstor",
+		"elasticsearch",
+		"opensearch",
+		"query dsl",
+		"mongo query"
+	],
+	"devDependencies": {
+		"@liquicode/devops": "^0.1.0"
+	},
+	"dependencies": {
+		"@liquicode/jsongin": "^0.1.0",
+		"@liquicode/jsonstor": "^0.1.0"
+	}
+}
