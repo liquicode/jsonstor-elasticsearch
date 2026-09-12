@@ -1007,7 +1007,7 @@ module.exports = {
 		// Elasticsearch can sort, but only on mapped fields - and a criteria may sort on any
 		// field in the payload, mapped or not. `ElasticExpression` reports `SortAbsorbed: false`,
 		// so this is the translator's declaration carried out rather than a shortcut around it.
-		Storage.FindMany2 = async function ( Criteria, Projection, Sort, MaxCount, Options )
+		Storage.FindMany2 = async function ( Criteria, Projection, Sort, Paging, Options )
 		{
 			if ( jsongin.ShortType( Options ) !== 'o' ) { Options = {}; }
 			check_criteria( Criteria );
@@ -1019,7 +1019,7 @@ module.exports = {
 				documents.push( jsongin.Project( search.Entries[ index ].Document, Projection ) );
 			}
 			if ( Sort ) { documents = jsongin.Sort( documents, Sort ); }
-			if ( MaxCount && ( MaxCount > 0 ) && ( documents.length >= MaxCount ) ) { documents = documents.splice( 0, MaxCount ); }
+			documents = jsonstor.Paging.Apply( documents, Paging );
 			report_scan( Options, search.Translation, search.Scanned, documents.length );
 			return documents;
 		};
