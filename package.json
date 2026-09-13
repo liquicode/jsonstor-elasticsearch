@@ -1,6 +1,6 @@
 {
 	"name": "@liquicode/jsonstor-elasticsearch",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A jsonstor adapter which stores documents on an Elasticsearch or OpenSearch server.",
 	"license": "MIT",
 	"engines": {
@@ -52,7 +52,7 @@
 		"@liquicode/devops": "^0.1.0"
 	},
 	"dependencies": {
-		"@liquicode/jsongin": "^0.1.0",
-		"@liquicode/jsonstor": "^0.1.0"
+		"@liquicode/jsongin": "^0.2.0",
+		"@liquicode/jsonstor": "^0.2.0"
 	}
 }
