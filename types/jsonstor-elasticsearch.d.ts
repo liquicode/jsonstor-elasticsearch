@@ -23,7 +23,7 @@ declare module '@liquicode/jsonstor-elasticsearch'
 		IndexName: string;
 		/** The document field which is the identifier. Its value becomes the Elasticsearch `_id`. `IdField` is the former spelling and still works. Defaults to `"_id"`. */
 		PrimaryKey?: string;
-		/** Allow an update or a replacement to change the identifier. Off by default, so an operation which would move it is refused by name rather than silently discarded. Defaults to `false`. */
+		/** Allow an update or replacement to change the identifier. When `false`, such an operation is refused. Defaults to `false`. */
 		PrimaryKeyMutable?: boolean;
 		/** The field which stores the document. It cannot be empty: Elasticsearch reserves `_id` as a metadata field, so a document carrying this family's default identifier field cannot be stored at the top level. See the notes. Defaults to `"jsonstor_document"`. */
 		PayloadField?: string;
